@@ -12,7 +12,7 @@ import org.springframework.web.util.UriTemplate;
 import java.net.URI;
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/books")
 public class BookController {
 
@@ -20,12 +20,12 @@ public class BookController {
   BookRepository bookRepository;
 
   @RequestMapping(method = RequestMethod.GET)
-  public @ResponseBody List<Book> list() {
+  public List<Book> list() {
     return this.bookRepository.findAll();
   }
 
   @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-  public @ResponseBody Book find(@PathVariable("id") Integer id) {
+  public Book find(@PathVariable("id") Integer id) {
     Book book = this.bookRepository.findById(id);
     if (book == null) {
       throw new BookNotFoundException(id);
@@ -33,7 +33,7 @@ public class BookController {
     return book;
   }
 
-  @RequestMapping(method = RequestMethod.POST, consumes = {"application/json"})
+  @RequestMapping(method = RequestMethod.POST)
   @ResponseStatus(HttpStatus.CREATED)
   public HttpEntity<?> create(@RequestBody Book book, @Value("#{request.requestURL}") StringBuffer parentUri) {
     book = this.bookRepository.save(book);

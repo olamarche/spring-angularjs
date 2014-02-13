@@ -1,6 +1,9 @@
-[![Build Status](https://travis-ci.org/robharrop/spring-angularjs.png)](https://travis-ci.org/robharrop/spring-angularjs)
-
 Application demonstrating an AngularJS client talking to a Spring REST-powered backend.
+
+- SPRING 4 MVC
+- MAVEN 3
+- ANGULARJS 1.2.12
+- NO XML configuration files
 
 ## Building
 
