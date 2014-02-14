@@ -1,4 +1,4 @@
-var app = angular.module('sprang', ["ngResource"]).config(
+var app = angular.module('sprang', ["ngResource", "spang.services"]).config(
 		function($routeProvider) {
 			$routeProvider.when('/books', {
 				templateUrl : '/views/books/list.html',
