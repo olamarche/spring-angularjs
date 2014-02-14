@@ -1,4 +1,6 @@
-var app = angular.module('sprang', ["ngResource", "spang.services"]).config(
+'use strict';
+
+var app = angular.module('sprang', ['ngResource', 'ngRoute']).config(['$routeProvider',
 		function($routeProvider) {
 			$routeProvider.when('/books', {
 				templateUrl : '/views/books/list.html',
@@ -7,7 +9,7 @@ var app = angular.module('sprang', ["ngResource", "spang.services"]).config(
 				templateUrl : '/views/books/detail.html',
 				controller : 'BookDetailController'
 			});
-		});
+		}]);
 
 
 

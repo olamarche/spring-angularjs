@@ -1,4 +1,4 @@
-app.controller('BookListController', ['Book', function($scope, Book) {
+app.controller('BookListController', function($scope, Book) {
 	$scope.books = Book.query();
 
 	$scope.deleteBook = function(book) {
@@ -7,8 +7,8 @@ app.controller('BookListController', ['Book', function($scope, Book) {
 			toastr.success("Deleted");
 		});
 	}
-}])
-.controller('BookDetailController', ['Book', function($scope, $routeParams, $location, Book) {
+})
+.controller('BookDetailController', function($scope, $routeParams, $location, Book) {
 	var bookId = $routeParams.bookId;
 
 	if (bookId === 'new') {
@@ -34,4 +34,4 @@ app.controller('BookListController', ['Book', function($scope, Book) {
 			});
 		}
 	};
-}]);
+});
