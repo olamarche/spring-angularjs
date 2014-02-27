@@ -1,4 +1,4 @@
-app.factory('Book', function($resource) {
+angular.module('sprang.services', []).factory('Book', function($resource) {
 			var Book = $resource('/api/books/:bookId', {
 				bookId : '@id'
 			}, {

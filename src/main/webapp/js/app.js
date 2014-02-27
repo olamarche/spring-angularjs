@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('sprang', ['ngResource', 'ngRoute']).config(['$routeProvider',
+angular.module('sprang', ['ngResource', 'ngRoute', 'sprang.controllers', 'sprang.services']).config(['$routeProvider',
 		function($routeProvider) {
 			$routeProvider.when('/books', {
 				templateUrl : '/views/books/list.html',

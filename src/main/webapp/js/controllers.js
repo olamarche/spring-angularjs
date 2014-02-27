@@ -1,4 +1,6 @@
-app.controller('BookListController', function($scope, Book) {
+angular.modules('sprang.controllers', [])
+
+.controller('BookListController', function($scope, Book) {
 	$scope.books = Book.query();
 
 	$scope.deleteBook = function(book) {

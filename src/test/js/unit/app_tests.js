@@ -4,7 +4,7 @@ toastr = {
     }
 }
 describe('Controllers', function () {
-    beforeEach(module('sprang'));
+    beforeEach(module('sprang.controllers'));
 
     beforeEach(function () {
         this.addMatchers({
