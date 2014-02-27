@@ -1,4 +1,4 @@
-angular.modules('sprang.controllers', [])
+angular.module('sprang.controllers', [])
 
 .controller('BookListController', function($scope, Book) {
 	$scope.books = Book.query();
